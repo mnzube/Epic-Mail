@@ -1,2 +1,3 @@
 # Epic Mail
-Exchange messages securely and efficiently
+This is the web app that helps people exchange
+messages/information over the internet.
