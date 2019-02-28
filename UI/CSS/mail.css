@@ -1,6 +1,7 @@
 body{
     margin:auto 0;
-    background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(../IMAGES/mountainrange.jpg);
+
+    background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(../RESOURCES/mountainrange.jpg);
     background-size:cover;
     background-position: center;
     font-family: sans-serif;
@@ -171,4 +172,7 @@ border-style: none;
 border-style: none;  
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 064af36a7eae4b4f7e6e96f615be516e931b26e0
