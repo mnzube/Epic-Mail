@@ -1,23 +1,21 @@
 body{
     margin:auto 0;
-
     background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(../RESOURCES/mountainrange.jpg);
     background-size:cover;
     background-position: center;
     font-family: sans-serif;
 
 }
+
+nav,div,header,section, footer {
+  box-sizing:border-box;
+}
 .zone {
-    
     color:#FFF;
     font-size:2em;
     border-radius:4px;
     border:1px solid #bbb;
     transition: all 0.3s linear;
-}
-
-.zone:hover {
-    -moz-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
 }
 
 /*NAV*/
@@ -51,8 +49,9 @@ a{
     justify-content: center;
     height: 90vh;
 }
+
 .login-page{
-    width:360px;
+    width:1000px;
     padding: 10% 0 0;
     margin: auto;
 
@@ -74,6 +73,17 @@ a{
     border:0;
     margin: 0 0 15px;
     padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+.form textarea{
+   font-family: "roboto", sans-serif;
+    outline: 1;
+    background-color: #f2f2f2;
+    width: 100%;
+    border:0;
+    margin: 0 0 15px;
+    padding: 40px;
     box-sizing: border-box;
     font-size: 14px;
 }
@@ -104,43 +114,216 @@ a{
 .form .register{
     display: none;
 }
+.email{
+  display: flex;
+  justify-content: flex-start;
+  height: 89vh;
 
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
-
-/* Modal Content/Box */
-.modal-content {
-  background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
-}
-
-/* The Close Button */
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: black;
+#new{
+  display: block;
+  padding:20px;
+  text-align: center;
+  color: #FFF;
   text-decoration: none;
-  cursor: pointer;
+  font-weight:500;
+  box-shadow: 0 1px 10px 0 #ccc;
+   
+}
+ion-icon{
+  padding-right:10px;
+  font-size:18px;
+}
+.email nav{
+  width:20%;
+  box-shadow: 0 1px 10px 0 #ccc;
+  height: 80vh;
+  font-size: 0.7em;
+
+}
+.email ul{
+  text-align: left;
+  list-style-type: none;
+  padding: 0;
+  margin: 30px 0;
+}
+.email li{
+  display: block;
+}
+.email a{
+  display: block;
+  padding: 10px 0;
+  padding-left:40px;
+  text-decoration: none;
+}
+.active{
+  font-weight: bolder;
+  font-size-adjust:0.7em;
+  font-style:oblique;
+}
+.active span {
+  background-color: #fff;
+  border-radius:10px;
+  padding: 2px 2px;
+  color:red;
+  font-family:monospace;
+  position: absolute;
+  right:1120px;
+
+}
+section#listview{
+  position: relative;
+  z-index: 2;
+  box-shadow:0 1px 10px 0 #ccc;
+  float: left;
+  width: 35%;
+  height:80vh;
+}
+header {
+width: 100%;
+box-shadow:0 1px 10px 0 #ccc;
+min-height: 65px;
+max-height: 65px;
+
+} 
+input {
+width: 78%;
+box-sizing:border-box;
+padding:18px;
+font-size:20px;
+border: none;
+background-color:unset;
+}
+button{
+  border: none;
+  width:15%;
+  box-sizing:border-box;
+  padding:15px 10px;
+  font-size:30px;
+  background-color: unset;
+  color:white;
+  
+}
+input::focus, button::focus{
+  outline: none;
+}
+#content div{
+ padding:10px;
+ position: relative;
+  }
+.item div{
+  position: relative;
+  padding-top: 10px;
+  border-bottom: 1px solid #ccc;
+}
+div.item.active::after {
+  content:'';
+  display:block;
+  width: 75%;
+  height:3px;
+  background-color:white;
+  box-shadow:0 1px 10px 0 #ccc;
+}
+
+.desc div{
+  padding-top:20%;
+padding-left:20%;
+}
+h5{
+  margin: 5px;
+  font-size: 20px;
+  font-weight: 500;
+
+}
+h6{
+  margin:5px;
+  font-size:13px;
+  font-weight:400;
+}
+p{
+  font-size:10px;
+font-weight:400px;
+}
+span.time{
+  position:absolute;
+  top:10px;
+  right:10px;
+  font-family: monospace;
+  color:#aaa;
+  font-size:10px;
+}
+section#view{
+  position: relative;
+  z-index:1;
+  box-shadow:0 1px 10px 0 #ccc;
+  float: left;
+  width:45%;
+  height:80vh;
+}
+#view header {
+box-shadow:0 1px 10px 0 #ccc;
+min-height:65px;
+max-height:65px;
+width: 100%;
+}
+#view ul{
+  text-align: left;
+  margin:0;
+  padding: 0;
+}
+#view li{
+  display:inline-block;
+}
+#view button{
+display: block;
+padding: 10px;
+margin: 0 20px;
+border: none;
+}
+#view i{
+  font-size:25px;
+}
+div.content{
+  overflow-y:auto;
+  height: 80vh;
+  position: relative;
+}
+div.header{
+  position: relative;
+  padding: 0 20px;
+  padding-top:20px;
+}
+span.name{
+  font-size: 20px;
+  position: relative;
+  top:20px;
+
+  display:inline-block;
+ font-weight: bolder;
+}
+.content span.time{
+  top: 60px;
+  right: 30px;
+  position: absolute;
+}
+div.body{
+  padding:20px;
+  font-size: 10px;
+}
+button.send{
+  padding:10px 30px;
+  background-color:#43a047;
+  position: absolute;
+  border: none;
+  font-size:10px; 
+  font-family: montserrat;
+  bottom: 150px;
+}
+
+
+hr.clearfix{
+  visibility: hidden;
+  clear: both;
 }
 /*FOOTER*/
 footer {
@@ -158,21 +341,15 @@ footer {
 .left{
     margin-right: auto;
 }
+
 .green{
-   /* background: -moz-linear-gradient(top, #56B870 0%, #a5c956 100%); /* FF3.6+ */
 border-style: none;
+
 }
 .red{
-  /*  background: -moz-linear-gradient(top, #C655BE 0%, #cf0404 100%); /* FF3.6+ */
-  border-style: none;
+border-style: none;
 }
 .blue{
-  
-/*background: -moz-linear-gradient(top, #7abcff 0%, #60abf8 44%, #4096ee 100%); /* FF3.6+ */  
 border-style: none;  
 }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 064af36a7eae4b4f7e6e96f615be516e931b26e0
