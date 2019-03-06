@@ -12,7 +12,6 @@ class Message {
    */
   findAll() {
     return this.messages;
-  }
-  
+  }  
 }
 export default new Message();
