@@ -14,7 +14,7 @@ const Message = {
     const message = MessageModel.create(req.body);
     return res.status(201).send(message);
   },
- 
+
 }
 
 export default Message;

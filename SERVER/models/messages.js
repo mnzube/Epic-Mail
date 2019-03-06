@@ -1,5 +1,7 @@
+
 import moment from 'moment';
 import uuid from 'uuid';
+
 class Message {
   /**
    * class constructor
@@ -8,6 +10,7 @@ class Message {
   constructor() {
     this.messages = [];
   }
+
  /**
    * 
    * @returns {object} message object
