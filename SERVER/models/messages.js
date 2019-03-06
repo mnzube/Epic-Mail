@@ -15,6 +15,11 @@ class Message {
    * 
    * @returns {object} message object
    */
+
+  findAll() {
+    return this.messages;
+  }  
+
   create(data) {
     const newMessage = {
       id: uuid,
@@ -27,6 +32,6 @@ class Message {
     this.messages.push(newMessage);
     return newMessage
   }
-  
+
 }
 export default new Message();

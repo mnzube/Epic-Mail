@@ -4,6 +4,12 @@ const Message = {
   /**
    * 
    * @param {object} req 
+
+  getAll(req, res) {
+    const messages = MessageModel.findAll();
+    return res.status(200).send(messages);
+  },
+
    * @param {object} res
    * @returns {object} message object 
    */
