@@ -1,6 +1,6 @@
 
 import moment from 'moment';
-import uuid from 'uuid';
+
 
 class Message {
   /**
@@ -10,7 +10,6 @@ class Message {
   constructor() {
     this.messages = [];
   }
-
  /**
    * 
    * @returns {object} message object
@@ -19,16 +18,17 @@ class Message {
   findAll() {
     return this.messages;
   }  
-
   create(data) {
-    const newMessage = {
-      id: uuid,
+    const newMessage ={
+      "status": 200,
+      "data": {
+      id: data.id || '',
       subject: data.subject || '',
-      emessage: data.emessage || '',
+      message: data.message || '',
       parentMessageId: data.parentMessageId || '',
       createdDate: moment.now(),
       status: data.status || '',
-    };
+    }};
     this.messages.push(newMessage);
     return newMessage
   }
