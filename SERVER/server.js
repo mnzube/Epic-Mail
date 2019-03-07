@@ -14,4 +14,5 @@ console.log('app running on port ', 3000);
 import Message from './controllers/messages';
 
 app.post('/api/v1/messages', Message.create);
+app.get('/api/v1/messages', Message.getAll);
 
