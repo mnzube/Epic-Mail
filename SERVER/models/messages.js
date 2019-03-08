@@ -39,5 +39,15 @@ class Message {
   findAll() {
     return this.messages;
   }
+   /**
+   * 
+   * @param id 
+   */
+  delete(id) {
+    const message = this.findOne(id);
+    const index = this.messages.indexOf(message);
+    this.messages.splice(index, 1);
+    return {};
+  }
 }
 export default new Message();

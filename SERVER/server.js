@@ -19,3 +19,4 @@ import Message from './controllers/messages';
 app.post('/api/v1/messages', Message.create);
 app.get('/api/v1/messages', Message.getAll);
 app.get('/api/v1/messages/:id', Message.getOne);
+app.delete('/api/v1/messages/:id', Message.delete);
