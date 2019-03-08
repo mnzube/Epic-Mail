@@ -1,4 +1,3 @@
-
 import moment from 'moment';
 
 
@@ -10,28 +9,35 @@ class Message {
   constructor() {
     this.messages = [];
   }
- /**
+  /**
    * 
    * @returns {object} message object
    */
-
-  findAll() {
-    return this.messages;
-  }  
   create(data) {
-    const newMessage ={
-      "status": 200,
-      "data": {
+    const newMessage = {
       id: data.id || '',
       subject: data.subject || '',
-      message: data.message || '',
+      emessage: data.emessage || '',
       parentMessageId: data.parentMessageId || '',
       createdDate: moment.now(),
       status: data.status || '',
-    }};
+    };
     this.messages.push(newMessage);
     return newMessage
   }
-
+  /**
+   * 
+   * @param {uuid} id
+   * @returns {object} message object
+   */
+  findOne(id) {
+    return this.messages.find(message => message.id === id);
+  }
+  /**
+   * @returns {object} returns all messages
+   */
+  findAll() {
+    return this.messages;
+  }
 }
 export default new Message();
