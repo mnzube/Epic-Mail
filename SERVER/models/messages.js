@@ -27,7 +27,7 @@ class Message {
   }
   /**
    * 
-   * @param {uuid} id
+   * @param id
    * @returns {object} message object
    */
   findOne(id) {
