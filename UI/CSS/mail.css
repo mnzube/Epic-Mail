@@ -1,0 +1,355 @@
+body{
+    margin:auto 0;
+    background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(../RESOURCES/mountainrange.jpg);
+    background-size:cover;
+    background-position: center;
+    font-family: sans-serif;
+
+}
+
+nav,div,header,section, footer {
+  box-sizing:border-box;
+}
+.zone {
+    color:#FFF;
+    font-size:2em;
+    border-radius:4px;
+    border:1px solid #bbb;
+    transition: all 0.3s linear;
+}
+
+/*NAV*/
+/*.logo{
+    width: 25px;
+    height: 25px;
+
+  }*/
+.main-nav {
+    display: flex;
+    list-style: none;
+    font-size: 0.9em;
+    margin:0;
+    text-align: center;
+}
+
+.push {
+    margin-left: auto;
+}
+li {
+    padding:5px;
+}
+a{
+    color: #f5f5f6;
+    text-decoration: none;
+}
+/*COVER*/
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+}
+
+.login-page{
+    width:1000px;
+    padding: 10% 0 0;
+    margin: auto;
+
+}
+.form{
+    position:relative;
+    z-index: 1;
+    background-color:rgba(19,35,47,0.5);
+    max-width: 360px;
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+}
+.form input{
+    font-family: "roboto", sans-serif;
+    outline: 1;
+    background-color: #f2f2f2;
+    width: 100%;
+    border:0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+.form textarea{
+   font-family: "roboto", sans-serif;
+    outline: 1;
+    background-color: #f2f2f2;
+    width: 100%;
+    border:0;
+    margin: 0 0 15px;
+    padding: 40px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+ .form button {
+    font-family: "roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background-color: #4caf50;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #ffffff;
+    font-size: 14px;
+    cursor: pointer;
+ }
+ .form button:hover,.form button:active{
+    background-color: #43a047;
+ }
+ .form .message{
+    margin:15px 0 0;
+    color: aliceblue;
+    font-size: 14px;
+ }
+ .form .message a {
+    color: #4caf50;
+    text-decoration: none;
+}
+.form .register{
+    display: none;
+}
+.email{
+  display: flex;
+  justify-content: flex-start;
+  height: 89vh;
+
+}
+#new{
+  display: block;
+  padding:20px;
+  text-align: center;
+  color: #FFF;
+  text-decoration: none;
+  font-weight:500;
+  box-shadow: 0 1px 10px 0 #ccc;
+   
+}
+ion-icon{
+  padding-right:10px;
+  font-size:18px;
+}
+.email nav{
+  width:20%;
+  box-shadow: 0 1px 10px 0 #ccc;
+  height: 80vh;
+  font-size: 0.7em;
+
+}
+.email ul{
+  text-align: left;
+  list-style-type: none;
+  padding: 0;
+  margin: 30px 0;
+}
+.email li{
+  display: block;
+}
+.email a{
+  display: block;
+  padding: 10px 0;
+  padding-left:40px;
+  text-decoration: none;
+}
+.active{
+  font-weight: bolder;
+  font-size-adjust:0.7em;
+  font-style:oblique;
+}
+.active span {
+  background-color: #fff;
+  border-radius:10px;
+  padding: 2px 2px;
+  color:red;
+  font-family:monospace;
+  position: absolute;
+  right:1120px;
+
+}
+section#listview{
+  position: relative;
+  z-index: 2;
+  box-shadow:0 1px 10px 0 #ccc;
+  float: left;
+  width: 35%;
+  height:80vh;
+}
+header {
+width: 100%;
+box-shadow:0 1px 10px 0 #ccc;
+min-height: 65px;
+max-height: 65px;
+
+} 
+input {
+width: 78%;
+box-sizing:border-box;
+padding:18px;
+font-size:20px;
+border: none;
+background-color:unset;
+}
+button{
+  border: none;
+  width:15%;
+  box-sizing:border-box;
+  padding:15px 10px;
+  font-size:30px;
+  background-color: unset;
+  color:white;
+  
+}
+input::focus, button::focus{
+  outline: none;
+}
+#content div{
+ padding:10px;
+ position: relative;
+  }
+.item div{
+  position: relative;
+  padding-top: 10px;
+  border-bottom: 1px solid #ccc;
+}
+div.item.active::after {
+  content:'';
+  display:block;
+  width: 75%;
+  height:3px;
+  background-color:white;
+  box-shadow:0 1px 10px 0 #ccc;
+}
+
+.desc div{
+  padding-top:20%;
+padding-left:20%;
+}
+h5{
+  margin: 5px;
+  font-size: 20px;
+  font-weight: 500;
+
+}
+h6{
+  margin:5px;
+  font-size:13px;
+  font-weight:400;
+}
+p{
+  font-size:10px;
+font-weight:400px;
+}
+span.time{
+  position:absolute;
+  top:10px;
+  right:10px;
+  font-family: monospace;
+  color:#aaa;
+  font-size:10px;
+}
+section#view{
+  position: relative;
+  z-index:1;
+  box-shadow:0 1px 10px 0 #ccc;
+  float: left;
+  width:45%;
+  height:80vh;
+}
+#view header {
+box-shadow:0 1px 10px 0 #ccc;
+min-height:65px;
+max-height:65px;
+width: 100%;
+}
+#view ul{
+  text-align: left;
+  margin:0;
+  padding: 0;
+}
+#view li{
+  display:inline-block;
+}
+#view button{
+display: block;
+padding: 10px;
+margin: 0 20px;
+border: none;
+}
+#view i{
+  font-size:25px;
+}
+div.content{
+  overflow-y:auto;
+  height: 80vh;
+  position: relative;
+}
+div.header{
+  position: relative;
+  padding: 0 20px;
+  padding-top:20px;
+}
+span.name{
+  font-size: 20px;
+  position: relative;
+  top:20px;
+
+  display:inline-block;
+ font-weight: bolder;
+}
+.content span.time{
+  top: 60px;
+  right: 30px;
+  position: absolute;
+}
+div.body{
+  padding:20px;
+  font-size: 10px;
+}
+button.send{
+  padding:10px 30px;
+  background-color:#43a047;
+  position: absolute;
+  border: none;
+  font-size:10px; 
+  font-family: montserrat;
+  bottom: 150px;
+}
+
+
+hr.clearfix{
+  visibility: hidden;
+  clear: both;
+}
+/*FOOTER*/
+footer {
+    text-align: center;
+}
+.footer-nav {
+    display: flex;
+    list-style: none;
+    font-size: 0.4em;
+    margin:0;
+}
+.right {
+    margin-left: auto;
+}
+.left{
+    margin-right: auto;
+}
+
+.green{
+border-style: none;
+
+}
+.red{
+border-style: none;
+}
+.blue{
+border-style: none;  
+}
+
