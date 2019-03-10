@@ -10,7 +10,8 @@
   },
   "scripts": {
     "start": "nodemon --exec babel-node ./SERVER/server.js",
-    "build": "babel  ./SERVER/server.js --out-dir build"
+    "build": "babel  ./SERVER/server.js --out-dir build",
+    "test":"mocha"
   },
   "repository": {
     "type": "git",
