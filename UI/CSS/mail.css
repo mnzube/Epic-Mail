@@ -176,7 +176,7 @@ section#listview{
   z-index: 2;
   box-shadow:0 1px 10px 0 #ccc;
   float: left;
-  width: 35%;
+  width: 75%;
   height:80vh;
 }
 header {
@@ -208,7 +208,7 @@ input::focus, button::focus{
   outline: none;
 }
 #content div{
- padding:10px;
+ padding:7px;
  position: relative;
   }
 .item div{
@@ -216,31 +216,33 @@ input::focus, button::focus{
   padding-top: 10px;
   border-bottom: 1px solid #ccc;
 }
-div.item.active::after {
+/*div.item.active::after {
   content:'';
   display:block;
   width: 75%;
   height:3px;
   background-color:white;
   box-shadow:0 1px 10px 0 #ccc;
-}
+}*/
 
 .desc div{
   padding-top:20%;
 padding-left:20%;
+
 }
 h5{
-  margin: 5px;
+  margin: 3px;
   font-size: 20px;
   font-weight: 500;
 
 }
 h6{
-  margin:5px;
+  margin:2px;
   font-size:13px;
   font-weight:400;
 }
 p{
+  margin: 1px;
   font-size:10px;
 font-weight:400px;
 }
@@ -250,7 +252,7 @@ span.time{
   right:10px;
   font-family: monospace;
   color:#aaa;
-  font-size:10px;
+  font-size:12px;
 }
 section#view{
   position: relative;
