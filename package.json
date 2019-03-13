@@ -9,10 +9,10 @@
     }
   },
   "scripts": {
-    "start":"node --require babel-register ./SERVER/server.js",
-    "dev": "nodemon --exec babel-register ./SERVER/server.js",
+    "start": "node --require babel-register ./server/server.js",
+    "dev": "nodemon --exec babel-register ./server/server.js",
     "build": "babel  ./SERVER/server.js --out-dir build",
-    "test":"mocha"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/mnzube/Epic-Mail#readme",
   "dependencies": {
+    "babel-register": "^6.26.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
     "eslint-config-airbnb-base": "^13.1.0",
