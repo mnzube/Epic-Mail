@@ -9,9 +9,10 @@
     }
   },
   "scripts": {
-    "start": "nodemon --require @babel/register ./server/server.js",
+    "start": "node --require @babel/register ./server/server.js",
     "build": "babel  ./server/server.js --out-dir build",
-    "test": "mocha"
+    "test": "mocha",
+    "dev":"nodemon --require @babel/register ./server/server.js"
   },
   "repository": {
     "type": "git",
