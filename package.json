@@ -9,7 +9,7 @@
     }
   },
   "scripts": {
-    "start": "nodemon --exec babel-node ./server/server.js",
+    "start": "nodemon --require @babel/register ./server/server.js",
     "build": "babel  ./server/server.js --out-dir build",
     "test": "mocha"
   },
@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/mnzube/Epic-Mail#readme",
   "dependencies": {
+    "@babel/register": "^7.0.0",
     "babel-register": "^6.26.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
