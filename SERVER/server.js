@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
-  return res.status(200).send({'message': 'Epic Mail'});
+  return res.status(200).json({'message': 'Epic Mail'});
 })
 //@router configuration
 app.use("/api/v1", messageRoutes);
