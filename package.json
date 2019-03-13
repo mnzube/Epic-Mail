@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Exchange messages over the internet efficiently. ",
   "main": "server.js",
+  "engines": {
+    "node": "10.15.0",
+    "npm": "6.4.1"
+  },
   "eslintConfig": {
     "env": {
       "es6": true
