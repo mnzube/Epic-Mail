@@ -1,10 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
 body{
     margin:auto 0;
-    background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(../RESOURCES/mountainrange.jpg);
     background-size:cover;
     background-position: center;
-    font-family: sans-serif;
+    font-family: 'Montserrat', sans-serif;
 
+}
+.homepage{
+  background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
+  url(../RESOURCES/mountainrange.jpg);
 }
 
 nav,div,header,section, footer {
@@ -31,7 +35,15 @@ nav,div,header,section, footer {
     margin:0;
     text-align: center;
 }
-
+.main-nav li{
+  color:#000;
+}
+.epic{
+  color: #fff!important;
+}
+.bottom{
+  color:#fff;
+}
 .push {
     margin-left: auto;
 }
@@ -75,6 +87,9 @@ a{
     padding: 15px;
     box-sizing: border-box;
     font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    box-shadow: none;
+    outline:none;
 }
 .form textarea{
    font-family: "roboto", sans-serif;
@@ -124,10 +139,9 @@ a{
   display: block;
   padding:20px;
   text-align: center;
-  color: #FFF;
   text-decoration: none;
   font-weight:500;
-  box-shadow: 0 1px 10px 0 #ccc;
+  border-bottom: 1px solid #ddd;
    
 }
 ion-icon{
@@ -136,7 +150,7 @@ ion-icon{
 }
 .email nav{
   width:20%;
-  box-shadow: 0 1px 10px 0 #ccc;
+  border:1px solid #ddd;
   height: 80vh;
   font-size: 0.7em;
 
@@ -155,6 +169,7 @@ ion-icon{
   padding: 10px 0;
   padding-left:40px;
   text-decoration: none;
+  color:#000;
 }
 .active{
   font-weight: bolder;
@@ -176,14 +191,14 @@ section#listview{
   z-index: 2;
   box-shadow:0 1px 10px 0 #ccc;
   float: left;
-  width: 75%;
+  width: 78%;
   height:80vh;
 }
 header {
 width: 100%;
-box-shadow:0 1px 10px 0 #ccc;
-min-height: 65px;
-max-height: 65px;
+border-bottom:1px solid #ddd;
+min-height: 70px;
+max-height: 70px;
 
 } 
 input {
@@ -193,6 +208,9 @@ padding:18px;
 font-size:20px;
 border: none;
 background-color:unset;
+font-family: 'Montserrat', sans-serif;
+outline: none;
+box-shadow:none;
 }
 button{
   border: none;
@@ -201,7 +219,7 @@ button{
   padding:15px 10px;
   font-size:30px;
   background-color: unset;
-  color:white;
+  color:black;
   
 }
 input::focus, button::focus{
@@ -229,7 +247,9 @@ input::focus, button::focus{
 .desc div{
 padding-top:20%;
 padding-left:20%;
-
+}
+.desc{
+  color:#000;
 }
 h5{
   margin: 3px;
@@ -337,12 +357,13 @@ footer {
     list-style: none;
     font-size: 0.4em;
     margin:0;
+    color:#000;
 }
 .right {
-    margin-left: auto;
+    margin-left:auto;
 }
 .left{
-    margin-right: auto;
+    margin-right:auto;
 }
 
 .green{
@@ -355,4 +376,6 @@ border-style: none;
 .blue{
 border-style: none;  
 }
-
+footer a{
+  color:#000;
+}
