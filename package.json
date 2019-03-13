@@ -14,7 +14,6 @@
   },
   "scripts": {
     "start": "node --require @babel/register ./server/server.js",
-    "build": "babel  ./server/server.js --out-dir build",
     "test": "mocha",
     "dev":"nodemon --require @babel/register ./server/server.js"
   },
