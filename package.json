@@ -15,7 +15,8 @@
   "scripts": {
     "start": "node --require @babel/register ./server/server.js",
     "test": "nyc --reporter=html --reporter=text --timeout=1500 mocha --require @babel/register --require babel-polyfill  SERVER/test/* --exit",
-    "dev": "nodemon --require @babel/register ./server/server.js"
+    "dev": "nodemon --require @babel/register ./server/server.js",
+    "coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
     "type": "git",
