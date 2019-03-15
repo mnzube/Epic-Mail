@@ -1,15 +1,18 @@
 import MessageModel from '../models/messages';
 
 const Message = {
-  //@create message
+  //@create a message
   create(req, res) {
     if (!req.body.subject && !req.body.message && !req.body.parentMessageId) {
-      return res.status(400).send({'message': 'All fields are required'})
+      return res.status(400).send({'message': 'All fields are required'});
+    }
+    if(req.body.subject==="" || req.body.message==="" || req.body.parentMessageId===""){
+      return res.status(400).send({'message': 'All fields are required'});
     }
     const message = MessageModel.create(req.body);
-    return res.status(201).send(message);
+    return res.status(201).json(message);
   },
-//@get all message
+//@get all messages
   getAll(req, res) {
     const messages = MessageModel.findAll();
     return res.status(200).send(messages);
@@ -23,7 +26,7 @@ const Message = {
     }
     return res.status(200).send(message);
   },
-//@delete message
+//@delete  a message
   delete(req, res) {
     const message = MessageModel.findOne(req.params.id);
     if (!message) {
@@ -32,7 +35,7 @@ const Message = {
     const ref = MessageModel.delete(req.params.id);
     return res.status(204).send(ref);
   },
- //@get unread
+ //@unread messages
  unread(req,res){
   const unRead=MessageModel.unRead();
   if(unRead){
@@ -41,7 +44,7 @@ const Message = {
     return res.status(400).json({error:"unread messages not  found."});
   }
  },
- //@get sent messages
+ //@sent messages
  sent(req,res){
   const sent=MessageModel.sent();
   if(sent){
