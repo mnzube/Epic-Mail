@@ -2,7 +2,7 @@ node_modules/
 .nyc_output
 .vscode/
 coverage
-.gitignore
+.env
 
 
 
