@@ -1,4 +1,4 @@
-import {pool} from './db';
+import db from './db';
 
 const createTable =()=>{
 const messages =
@@ -35,43 +35,43 @@ const groupMessage=
      members INTEGER NOT NULL,
      admin BOOLEAN DEFAULT false)`;
  //messages
- pool.query(messages)
+ db.query(messages)
  .then((res)=> {
      console.log(res);
-     pool.end();
+     db.end();
  })
  .catch((error)=>{
      console.log(error);
  })
  //users 
- pool.query(user)
+ db.query(user)
  .then((res) =>{
  console.log(res);
- pool.end();
+ db.end();
 })
 .catch((error)=>{
 console.log(error);
 })
  //sent mail 
- pool.query(sentmail)
+ db.query(sentmail)
  .then((res) =>{
  console.log(res);
- pool.end();
+ db.end();
 })
 .catch((error)=>{
 console.log(error);
 })
  //groups 
- pool.query(groupMessage)
+ db.query(groupMessage)
  .then((res) =>{
  console.log(res);
- pool.end();
+ db.end();
 })
 .catch((error)=>{
 console.log(error);
 })
 }
-pool.on('remove',() => {
+db.on('remove',() => {
     console.log('client removed');
     process.exit(0);
 });
