@@ -2,7 +2,7 @@
   "name": "epic-mail",
   "version": "1.0.0",
   "description": "Exchange messages over the internet efficiently. ",
-  "main": "server.js",
+  "main": "index.js",
   "engines": {
     "node": "10.15.0",
     "npm": "6.4.1"
@@ -13,9 +13,9 @@
     }
   },
   "scripts": {
-    "start": "node --require @babel/register ./server/server.js",
+    "start": "node --require @babel/register ./server/index.js",
     "test": "nyc --reporter=html --reporter=text --timeout=1500 mocha --require @babel/register --require babel-polyfill  SERVER/test/* --exit",
-    "dev": "nodemon --require @babel/register ./server/server.js",
+    "dev": "nodemon --require @babel/register ./server/index.js",
     "coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
     "create": "node --require @babel/register SERVER/db/tables createTable"
   },
