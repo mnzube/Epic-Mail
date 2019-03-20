@@ -1,9 +1,8 @@
 import express from "express";
-import userControllers from "../controllers/userControllers"
-const router=express.Router();
-const {signup}= userControllers;
-//@user
-//@post method
-router.post("/signup",signup);
+import userControllers from "../controllers/userControllers";
+import validation from "../../../middleware/validation";
 
+const router = express.Router();
+const {signup} = userControllers ;
+router.post("/signup", validation ,signup);
 export default router;
