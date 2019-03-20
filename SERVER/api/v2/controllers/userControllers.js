@@ -1,6 +1,5 @@
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-import pg from "../../../db/db";
 import pool from "../../../db/db";
 
 //signup
@@ -8,13 +7,13 @@ class User{
     signup(req,res){
 
         const newUser={
-                    firstname:req.body.firstname,
-                    lastname:req.body.lastname,
-                    email:req.body.email,
-                    password:req.body.password ? bcrypt.hashSync(req.body.password,10) :"123456"
+                    firstname:req.body.firstname.trim(),
+                    lastname:req.body.lastname.trim(),
+                    email:req.body.email.trim(),
+                    password:bcrypt.hashSync(req.body.password,10)
                 };
               const sql="SELECT * FROM users WHERE email=$1"; 
-               pg.query(sql,[newUser.email])
+               pool.query(sql,[newUser.email])
                  .then(email=>{
                      if(email.rows.length!==0){
                          return res.status(400).json({error:"email already exists."});
@@ -30,7 +29,7 @@ class User{
                              if(error){
                                  return res.status(500).json({error});
                              }
-                            return res.status(201).json({token:`Bearer ${token}`,user:user.rows});
+                            return res.status(201).json({status:201,token:`Bearer ${token}`});
                          })
                       })
                       .catch(err=>{
