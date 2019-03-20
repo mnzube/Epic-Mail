@@ -1,8 +1,8 @@
 import chai from "chai";
 import chaiHttp from "chai-http";
 import express from "express";
-import messageRoutes from "../routes/messageRoute";
-import authRoutes from "../routes/authRoutes";
+import messageRoutes from "../api/v1/routes/messageRoute";
+import authRoutes from "../api/v1/routes/authRoutes";
 import bodyParser from "body-parser";
 import uuid from "uuid";
 

@@ -1,11 +1,19 @@
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-import pg from "../db/db";
-import pool from "../db/db";
+import pg from "../../../db/db";
+import pool from "../../../db/db";
 
 //signup
 class User{
     signup(req,res){
+        //validation
+        if(!req.body.email || !req.body.password || !req.body.firstname || !req.body.lastname){
+            return res.status(400).json({status:400,error:"all fields are required"});
+        }
+        else if(req.body.email==="" || req.body.firstname==="" ||
+           req.body.lastname==="" || req.body.password===""){
+                return res.status(400).json({status:400,error:"all fields are required"});
+        }else{
         const newUser={
                     firstname:req.body.firstname,
                     lastname:req.body.lastname,
@@ -16,7 +24,7 @@ class User{
                pg.query(sql,[newUser.email])
                  .then(email=>{
                      if(email.rows.length!==0){
-                         return res.status(400).json({error:"email is already exist."});
+                         return res.status(400).json({error:"email already exists."});
                      }
                      //save user to database
                      const save="INSERT INTO users (firstname,lastname,email,password) VALUES ($1,$2,$3,$4) returning*";
@@ -42,5 +50,6 @@ class User{
                     return res.status(500).json({error});
                  })  
     }
+}
 }
 export default new User();

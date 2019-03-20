@@ -1,6 +1,6 @@
 import express from "express";
-import Message from '../controllers/messageController';
-import  auth from "../middleware/auth";
+import Message from "../controllers/messageController";
+import  auth from "../../../middleware/auth";
 const app=express.Router();
 
 app.post('/messages', auth.checkAuth,Message.create);
