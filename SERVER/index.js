@@ -1,7 +1,8 @@
 import express from 'express';
-import messageRoutes from "./routes/messageRoute";
-import authRoutes from "./routes/authRoutes";
+import messageRoutes from "./api/v1/routes/messageRoute";
+import authRoutes from "./api/v1/routes/authRoutes";
 import bodyParser from "body-parser";
+import v2 from "./api/v2/routes/index";
 
 const app = express();
 const port=3000;
@@ -17,6 +18,7 @@ app.get('/', (req, res) => {
 //@router configuration
 app.use("/api/v1", messageRoutes);
 app.use("/api/v1",authRoutes);
+app.use("/api/v2",v2);
 //@handling 
 app.use((req,res,next)=>{
   const error=new Error("Sorry request not found.");

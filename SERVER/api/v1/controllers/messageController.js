@@ -1,4 +1,4 @@
-import MessageModel from '../models/messages';
+import MessageModel from '../../../models/messages';
 
 const Message = {
   //@create a message

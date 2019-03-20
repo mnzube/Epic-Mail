@@ -1,8 +1,8 @@
 import uuid from "uuid";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-import User from "../../models/userModel";
-import keys from "../../config/keys";
+import User from "../../../../models/userModel";
+import keys from "../../../../config/keys";
 
 //@
 exports.signup=(req,res)=>{
