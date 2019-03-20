@@ -19,7 +19,6 @@ describe("API EndPoints V2", () => {
                 if (err) {
                     done(err);
                 }
-                // console.log(res);
                 res.should.be.an("object");
                 res.should.have.status(201);
                 res.body.should.have.property("status");
@@ -27,25 +26,4 @@ describe("API EndPoints V2", () => {
                 done();
             })
     })
-    //404 error message test
-    // it("Should return status of 400", (done) => {
-    //     chai.request(app)
-    //         .post("/api/v2/signup")
-    //         .set("Content-type", "application/json")
-    //         .send({
-    //             email: "",
-    //             password: "",
-    //             lastname: "dsfsd",
-    //             firstname: "sdfdsfds"
-    //         })
-    //         .end((err, res) => {
-    //             if (err) {
-    //                 done(err);
-    //             }
-    //             res.should.have.status(400);
-    //             res.should.be.an("object");
-    //             res.body.should.have.property("error");
-    //             done();
-    //         })
-    // })
 });
