@@ -29,7 +29,8 @@ class User{
                              if(error){
                                  return res.status(500).json({error});
                              }
-                            return res.status(201).json({status:201,token:`Bearer ${token}`});
+                            return res.status(201).json({status:201,
+                                token:`Bearer ${token}`});
                          })
                       })
                       .catch(err=>{

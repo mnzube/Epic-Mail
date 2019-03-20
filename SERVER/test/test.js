@@ -1,22 +1,12 @@
 import chai from "chai";
 import chaiHttp from "chai-http";
-import express from "express";
-import messageRoutes from "../api/v1/routes/messageRoute";
-import authRoutes from "../api/v1/routes/authRoutes";
-import bodyParser from "body-parser";
 import uuid from "uuid";
+import app from "../index";
 
 chai.use(chaiHttp);
-const { should } = chai.should();
-const app = express();
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-//@router configuration
-app.use("/api/v1", authRoutes);
-app.use("/api/v1", messageRoutes);
+chai.should();
 let token;
 let messageId;
-
 
 describe("API EndPoints", () => {
     it("Should let user to signup", (done) => {
