@@ -17,11 +17,11 @@ describe("API EndPoints V2", () => {
             });
           });
         });
-    it("Should let user to signup", (done) => {
+    it("Should let a user signup", (done) => {
         chai.request(app)
             .post("/api/v2/signup")
             .send({
-                email: "kingi@gmail.com",
+                email: "king@gmail.com",
                 password: "123457",
                 lastname: "king",
                 firstname: "sdfds"
@@ -37,8 +37,8 @@ describe("API EndPoints V2", () => {
                 done();
             })
     })
-    //
-    it("should return status code of 400",(done)=>{
+    //sign up check for empty fields
+    it("should check for empty fields",(done)=>{
         chai.request(app)
         .post("/api/v2/signup")
         .send({
@@ -56,4 +56,46 @@ describe("API EndPoints V2", () => {
             done();
         })
     })
+    //signin
+    it("Should let a user signin", (done) => {
+        chai.request(app)
+            .post("/api/v2/signin")
+            .set("Content-type", "application/json")
+            .send({
+                email:"king@gmail.com",
+                password:"123457"
+            })
+            .end((err, res) => {
+                
+                if (err) {
+                    done(err);
+                }
+                token = res.body.token;
+                res.should.be.an("object");
+                res.should.have.status(200);
+                res.body.should.have.property("token");
+                res.body.should.have.property("status");
+                done();
+            })
+
+    })
+    //check for 400 status in signin
+    it("Should check for empty fields", (done) => {
+        chai.request(app)
+            .post("/api/v2/signin")
+            .set("Content-type", "application/json")
+            .send({
+                email: "",
+                password: "12345678"
+            })
+            .end((err, res) => {
+                if (err) {
+                    done(err);
+                }
+                res.should.be.an("object");
+                res.should.have.status(400);
+                res.body.should.have.property("error");
+                done();
+            })
+        })
 });
