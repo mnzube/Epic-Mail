@@ -49,7 +49,7 @@ class User{
          .then(user=>{
              //when the user doesn't exist
              if(user.rows.length===0){
-                 return res.status(400).json({status:400,error:"user email not found."})
+                 return res.status(400).json({status:400,error:"user email or password not found."})
              } //compares passwords
              const compare=bcrypt.compareSync(req.body.password,user.rows[0].password);
              if(compare){
@@ -64,7 +64,7 @@ class User{
                    return res.status(200).json({status:200,token:`Bearer ${token}`});
                 })
              }else{
-                 return res.status(401).json({status:401,error:"incorrect password"});
+                 return res.status(401).json({status:401,error:"incorrect email or password"});
              }
          })
          .catch(error=>{

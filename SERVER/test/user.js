@@ -38,7 +38,7 @@ describe("API EndPoints V2", () => {
             })
     })
     //sign up check for empty fields
-    it("should return status code 400",(done)=>{
+    it("should check for empty fields",(done)=>{
         chai.request(app)
         .post("/api/v2/signup")
         .send({
@@ -80,7 +80,7 @@ describe("API EndPoints V2", () => {
 
     })
     //check for 400 status in signin
-    it("Should return 400 status", (done) => {
+    it("Should check for empty fields", (done) => {
         chai.request(app)
             .post("/api/v2/signin")
             .set("Content-type", "application/json")
