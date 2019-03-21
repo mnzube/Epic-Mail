@@ -53,5 +53,21 @@ pool.query(sql,[message.subject,message.message,
             return res.status(500).json({error});
          })
     }
+    /*get messages*/
+    getMessage(req,res){
+        const sql="SELECT * FROM messages WHERE receiver_id=$1";
+        pool.query(sql,[req.user.id])
+        .then(messages=>{
+            //@when there is empty inbox
+            if(messages.rows.length===0){
+                return res.status(404).json({notFound:"sorry there no messages"});
+            }
+            return res.status(200).json({status:200,messages:messages.rows});
+        })
+        .catch(error=>{
+            //  console.log(error);
+        return res.status(500).json({error});
+        })
+    }
 };
 export default new Message();

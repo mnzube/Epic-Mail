@@ -14,6 +14,6 @@ router.post("/signup", validation,signup);
 router.post("/signin",signinvalidation,signin);
 router.post("/messages",authentication,msgvalidation,create);
 router.get("/messages/unread",authentication,unreadMessage);
-
+router.get("/messages",authentication,getMessage);
 
 export default router;
