@@ -2,7 +2,7 @@ import express from 'express';
 import messageRoutes from "./api/v1/routes/messageRoute";
 import authRoutes from "./api/v1/routes/authRoutes";
 import bodyParser from "body-parser";
-import v2 from "./api/v2/routes/index";
+import v2 from "./api/v2/routes/v2routes";
 
 const app = express();
 const port=3000;
@@ -38,3 +38,4 @@ app.listen(port, () =>{
   console.log(`app is listening on port ${port}`);
 })
 
+export default app;
