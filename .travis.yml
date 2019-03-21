@@ -10,11 +10,10 @@ services:
   - postgresql       
 
 
-
 before_script:
     - psql -c 'create database mail;' -U postgres
+    - npm run create
     - psql -c "CREATE USER mike WITH PASSWORD 'mchlmbv';" -U postgres
-    - npm run create 
     - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
     - chmod +x ./cc-test-reporter
     - ./cc-test-reporter before-build
