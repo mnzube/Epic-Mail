@@ -1,5 +1,6 @@
 import express from "express";
 import userController from "../controllers/userControllers";
+import msgController from "../controllers/msgControllers";
 import v2routes from "./v2routes";
 
 const v2=express.Router();

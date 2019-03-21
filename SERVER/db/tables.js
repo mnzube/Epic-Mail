@@ -1,22 +1,23 @@
 import db from './db';
 
-const createTable =()=>new Promise ((resolve,reject)=>{
+const createTable =()=>new Promise((resolve,reject)=>{
 const tables =
  `CREATE TABLE IF NOT EXISTS
  messages(
-     message_id serial PRIMARY KEY NOT NULL,
-     subject VARCHAR(100)NOT NULL,
+     message_id SERIAL PRIMARY KEY NOT NULL,
+     subject VARCHAR(100) NOT NULL,
+     message TEXT NOT NULL,
      sender_id INTEGER NOT NULL,
      receiver_id INTEGER NOT NULL,
-     status VARCHAR(100)NOT NULL
+     status VARCHAR(100) NOT NULL
  );
  CREATE TABLE IF NOT EXISTS
  users(
-     user_id serial PRIMARY KEY NOT NULL,
-     firstname VARCHAR(100)NOT NULL,
+     id serial PRIMARY KEY NOT NULL,
+     firstname VARCHAR(100) NOT NULL,
      lastname VARCHAR(100) NOT NULL,
      email VARCHAR(100) NOT NULL,
-     password VARCHAR(100)NOT NULL,
+     password VARCHAR(100) NOT NULL,
      isadmin BOOLEAN DEFAULT false NOT NULL
  );
  CREATE TABLE IF NOT EXISTS
