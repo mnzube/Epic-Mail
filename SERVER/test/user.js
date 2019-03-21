@@ -118,4 +118,18 @@ describe("API EndPoints V2", () => {
                 done();
             })
     })
+    //@unread messages
+    it("Should return 200 status and unread messages", (done) => {
+        chai.request(app)
+            .get(`/api/v2/messages/unread`)
+            .set("Content-type", "application/json")
+            .set("Authorization", token)
+            .end((err, res) => {
+                if (err) {
+                    done(err);
+                }
+                res.should.be.an("object");
+                done();
+            })
+    }) 
 });
