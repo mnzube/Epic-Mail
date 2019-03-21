@@ -35,9 +35,7 @@ const tables =
  db.query(tables)
  .then((res)=> {
      //console.log(res);
-     resolve();
-  
-     
+     resolve();    
  })
  .catch((error)=>{
     // console.log(error);
@@ -61,7 +59,6 @@ const dropTable =()=>new Promise ((resolve,reject)=>{
 reject(error);
 });
 });
-
 
  export{createTable, dropTable};
 

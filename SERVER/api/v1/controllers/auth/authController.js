@@ -4,9 +4,9 @@ import jwt from "jsonwebtoken";
 import User from "../../../../models/userModel";
 import keys from "../../../../config/keys";
 
-//@
+
 exports.signup=(req,res)=>{
-    //@validation
+    //validation
     if(!req.body.email || !req.body.password || !req.body.firstname || !req.body.lastname){
         return res.status(400).json({error:"all fields are required"});
     }
@@ -14,7 +14,7 @@ exports.signup=(req,res)=>{
        req.body.lastname==="" || req.body.password===""){
             return res.status(400).json({error:"all fields are required"});
     }else{
-        //@initial newUser
+        //initial newUser
         const newUser={
         id:uuid.v4(),
         email:req.body.email,
@@ -30,19 +30,19 @@ exports.signup=(req,res)=>{
     }
     }
 }
-//@signin
+//signin
 exports.signin=(req,res)=>{
-        //@validation
+        //validation
         if(!req.body.email || !req.body.password){
             return res.status(400).json({error:"all fields are required"});
         }
         if(req.body.email==="" || req.body.password===""){
             return res.status(400).json({error:"all fields are required"});
         }
-    //@
+    //
     const user=User.find(req.body.email);
     if(user){
-        //@
+        //
         bcrypt.compare(req.body.password,user.password,(error,matches)=>{
             if(error){
                 return res.status(500).json({error});
