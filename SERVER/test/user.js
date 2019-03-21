@@ -98,4 +98,24 @@ describe("API EndPoints V2", () => {
                 done();
             })
         })
+         //@testing message endpoint 
+    it("Should create message", (done) => {
+        chai.request(app)
+            .post("/api/v2/messages")
+            .set("Content-type", "application/json")
+            .set("Authorization", token)
+            .send({
+                subject: "Hello",
+                message: "how are you",
+                receiver: "2"
+            })
+            .end((err, res) => {
+                if (err) {
+                    done(err);
+                }
+                res.should.be.an("object");
+                res.should.have.status(201);
+                done();
+            })
+    })
 });
