@@ -10,8 +10,8 @@ describe("API EndPoints V2", () => {
         chai.request(app)
             .post("/api/v2/signup")
             .send({
-                email: "kigali12@gmail.com",
-                password: "12345678",
+                email: "kigali@gmail.com",
+                password: "1234567",
                 lastname: "dsfsd",
                 firstname: "sdfdsfds"
             })
