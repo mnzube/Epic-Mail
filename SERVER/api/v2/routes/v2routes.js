@@ -8,12 +8,13 @@ import msgvalidation from "../../../middleware/msgvalidation";
 
 const router = express.Router();
 const {signup,signin} = userControllers;
-const {create,unreadMessage,getMessage} = msgControllers;
+const {create,unreadMessage,getMessage,sentMessage} = msgControllers;
 
 router.post("/signup", validation,signup);
 router.post("/signin",signinvalidation,signin);
 router.post("/messages",authentication,msgvalidation,create);
 router.get("/messages/unread",authentication,unreadMessage);
 router.get("/messages",authentication,getMessage);
+router.get("/messages/sent",authentication,sentMessage);
 
 export default router;
