@@ -118,7 +118,7 @@ describe("API EndPoints V2", () => {
                 done();
             })
     })
-    //@unread messages
+    //unread messages
     it("Should return 200 status and unread messages", (done) => {
         chai.request(app)
             .get(`/api/v2/messages/unread`)
