@@ -53,25 +53,25 @@ pool.query(sql,[message.subject,message.message,
             return res.status(500).json({error});
          })
     }
-    /*get messages*/
+    //get messages
     getMessage(req,res){
         const sql="SELECT * FROM messages WHERE receiver_id=$1";
         pool.query(sql,[req.user.id])
         .then(messages=>{
-            //@when there is empty inbox
+            //when inbox is empty
             if(messages.rows.length===0){
                 return res.status(404).json({notFound:"sorry there no messages"});
             }
             return res.status(200).json({status:200,messages:messages.rows});
         })
         .catch(error=>{
-            //  console.log(error);
+            
         return res.status(500).json({error});
         })
     }
     //sent messages
     sentMessage(req,res){
-    //@user
+    //
     const sql="SELECT * FROM sentmail INNER JOIN messages ON messages.sender_id=sentmail.user_id  AND messages.message_id=sentmail.message_id WHERE sentmail.user_id=$1";
     pool.query(sql, [req.user.id])
         .then(messages=>{
@@ -84,5 +84,31 @@ pool.query(sql,[message.subject,message.message,
             console.log(error);
         })
     }
+    //get messages by id
+   getMessageById(req,res){
+    const messageId=req.params.messageId;
+    const sql="SELECT * FROM messages WHERE message_id=$1 AND receiver_id=$2";
+    pool.query(sql,[messageId,req.user.id])
+     .then(messages=>{
+         if(messages.rows.length===0){
+            return res.status(404).json({error:"sorry message not found."});
+         }else{
+              //@update messages
+            const updateMessage="UPDATE messages SET status=$1 WHERE message_id=$2 RETURNING *";
+            pool.query(updateMessage,["Read",messageId])
+            .then(data=>{
+                return res.status(200).json({alert:"message",messages:data.rows});
+            })
+            .catch((errors)=>{
+                //console.log(errors);
+                return res.status(500).json({errors});
+            })
+         }
+     })
+     .catch((error)=>{
+         //  console.log(error);
+        return res.status(500).json({error});
+     })
+}
 };
 export default new Message();
