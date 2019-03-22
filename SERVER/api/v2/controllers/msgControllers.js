@@ -69,5 +69,20 @@ pool.query(sql,[message.subject,message.message,
         return res.status(500).json({error});
         })
     }
+    //sent messages
+    sentMessage(req,res){
+    //@user
+    const sql="SELECT * FROM sentmail INNER JOIN messages ON messages.sender_id=sentmail.user_id  AND messages.message_id=sentmail.message_id WHERE sentmail.user_id=$1";
+    pool.query(sql, [req.user.id])
+        .then(messages=>{
+            if(messages.rows.length===0){
+                return res.status(404).json({error:"sorry there is no sent messages."});
+            }
+            return res.status(200).json({messages:messages.rows});
+        })
+        .catch(error=>{
+            console.log(error);
+        })
+    }
 };
 export default new Message();
